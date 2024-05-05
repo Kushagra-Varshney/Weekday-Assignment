@@ -5,6 +5,8 @@ import JobCard from './JobCard.jsx';
 import { getEstimatedSalary, getExperienceString } from '../utils/jobUtils';
 import { getJobsFromAPI } from '../fetchFunctions/fetchJobsFromAPI.js';
 import Loader from './Loader.jsx';
+import Error from './Error.jsx';
+import Filters from './Filters.jsx';
 
 
 
@@ -29,6 +31,7 @@ export default function JobGrid() {
     return (
         <>
             <Container maxWidth="lg">
+                <Filters />
                 <Grid container spacing={4}>
                     {jobs.map((job, index) => {
                         const expectedSalary = getEstimatedSalary(job.maxJdSalary, job.minJdSalary, job.salaryCurrencyCode);
@@ -63,6 +66,7 @@ export default function JobGrid() {
                 </Grid>
             </Container>
             {loading && <Loader />}
+            {error && <Error />}
         </>
     );
 }

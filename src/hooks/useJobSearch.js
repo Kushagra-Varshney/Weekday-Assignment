@@ -13,10 +13,8 @@ export default function useJobSearch(fetchFn, limit, offset) {
                 console.log(data.jdList);
                 setJobs(prevJobs => {
                     const jobMap = new Map();
-                    console.log("PrevJobs->",prevJobs);
                     prevJobs.forEach(job => jobMap.set(job.jdUid, job));
                     data.jdList.forEach(job => jobMap.set(job.jdUid, job));
-                    console.log(jobMap.values());
                     return Array.from(jobMap.values());
                 });
             } catch (error) {
@@ -26,7 +24,7 @@ export default function useJobSearch(fetchFn, limit, offset) {
             }
         }
         fetchJobs();
-        
+
     }, [limit, offset]);
 
     return {

@@ -1,16 +1,16 @@
 import React from 'react'
-import { Card, CardContent, CardHeader, CardActions, Typography, Button, Box } from '@mui/material';
+import { Card, CardContent, Typography, Button, Box } from '@mui/material';
 
 export default function JobCard({ companyName, jobRole, location, logoUrl, expectedSalary, description, experience }) {
     return (
         <Card sx={{ maxWidth: 345, padding: 2 }}>
             <Box display="flex" alignItems="center" gap={2}>
-                <img src={logoUrl} alt={companyName} width="50" height="50" style={{ borderRadius: 10 ,objectFit: "contain" }} />
+                <img src={logoUrl} alt={companyName} width="50" height="50" style={{ borderRadius: 10, objectFit: "contain" }} />
                 <Box>
                     <Typography variant="h6" sx={{ fontFamily: "Roboto" }}>
                         {companyName}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" fontFamily={""}>
+                    <Typography variant="body2" color="text.secondary">
                         {jobRole.toUpperCase()}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -30,7 +30,7 @@ export default function JobCard({ companyName, jobRole, location, logoUrl, expec
                 </Typography>
                 <Box marginTop={2}>
                     <Typography variant="h6" color="text.primary">
-                        {experience !== ''? `Experience: ${experience}` : "Experience: Not Specified"}
+                        {experience !== '' ? `Experience: ${experience}` : "Experience: Not Specified"}
                     </Typography>
                 </Box>
             </CardContent>
