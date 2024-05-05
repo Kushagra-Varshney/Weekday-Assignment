@@ -5,7 +5,7 @@ export default function JobCard({ companyName, jobRole, location, logoUrl, expec
     return (
         <Card sx={{ maxWidth: 345, padding: 2 }}>
             <Box display="flex" alignItems="center" gap={2}>
-                <img src={logoUrl} alt={companyName} width="50" height="50" style={{ borderRadius: 10 }} />
+                <img src={logoUrl} alt={companyName} width="50" height="50" style={{ borderRadius: 10 ,objectFit: "contain" }} />
                 <Box>
                     <Typography variant="h6" sx={{ fontFamily: "Roboto" }}>
                         {companyName}
