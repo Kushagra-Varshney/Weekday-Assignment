@@ -1,10 +1,10 @@
-export async function getJobsFromAPI() {
+export async function getJobsFromAPI(limit, offset) {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
     const body = JSON.stringify({
-        "limit": 10,
-        "offset": 0
+        "limit": limit,
+        "offset": offset
     });
 
     const requestOptions = {

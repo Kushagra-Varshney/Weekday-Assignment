@@ -1,17 +1,12 @@
 import React, { useEffect } from 'react'
-import {getJobsFromAPI} from './fetchFunctions/fetchJobs'
+import {getJobsFromAPI} from './fetchFunctions/fetchJobsFromAPI'
+import useJobSearch from './hooks/useJobSearch'
 
 export default function App() {
 
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getJobsFromAPI()
-      console.log(data)
-    }
-    fetchData()
-  }, [])
+  const {jobs} = useJobSearch(getJobsFromAPI, 10, 0);
 
   return (
-    <div>App</div>
+    <div>{jobs.map(job => <li key = {job.jdUid}>{job.companyName}</li>)}</div>
   )
 }
