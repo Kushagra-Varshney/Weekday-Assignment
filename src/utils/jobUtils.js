@@ -9,6 +9,20 @@ export function getEstimatedSalary(maxSalary, minSalary, currencyCode) {
     else if(minSalary) {
         salary = `${minSalary*1000} ${currencyCode}`;
     }
-    console.log(salary);
     return salary;
+}
+
+export function getExperienceString(minExp, maxExp) {
+    let experience = "";
+    if(minExp && maxExp) {
+        experience = `${minExp} - ${maxExp} years`;
+    }
+    else if(minExp) {
+        experience = `${minExp} years`;
+    }
+    else if(maxExp) {
+        experience = `Up to ${maxExp} years`;
+    }
+    
+    return experience;
 }
