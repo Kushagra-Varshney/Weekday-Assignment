@@ -1,16 +1,12 @@
 import React, { useEffect } from 'react'
-import { getJobsFromAPI } from './fetchFunctions/fetchJobsFromAPI'
-
 import JobGrid from './components/JobGrid.jsx';
+import { Container } from '@mui/material';
 
 export default function App() {
 
-
-
-
   return (
-    <div>
+    <Container maxWidth="lg">
       <JobGrid />
-    </div>
+    </Container>
   )
 }
