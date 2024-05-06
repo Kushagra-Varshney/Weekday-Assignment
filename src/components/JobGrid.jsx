@@ -10,11 +10,7 @@ import Filters from './Filters.jsx';
 
 
 
-export default function JobGrid() {
-
-    const [offset, setOffset] = useState(0);
-
-    const { loading, error, jobs } = useJobSearch(getJobsFromAPI, 9, offset);
+export default function JobGrid({ loading, error, jobs, setOffset }) {
 
     const observer = useRef();
 
@@ -31,7 +27,6 @@ export default function JobGrid() {
     return (
         <>
             <Container maxWidth="lg">
-                <Filters />
                 <Grid container spacing={4}>
                     {jobs.map((job, index) => {
                         const expectedSalary = getEstimatedSalary(job.maxJdSalary, job.minJdSalary, job.salaryCurrencyCode);
