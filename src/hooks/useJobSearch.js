@@ -12,9 +12,8 @@ export default function useJobSearch(fetchFn, limit, offset) {
     const [jobs, setJobs] = useState([]);
     const [filters, setFilters] = useState({
         companyName: '',
-        location: '',
+        minBasePay: 0,
         remote: 'all',
-        techStack: [],
         role: [],
         experience: 0,
     });
@@ -82,5 +81,14 @@ function updateJobsBasedOnFilters(jobs, filters) {
     } else if(filters.remote === 'onsite'){
         filteredJobs = filteredJobs.filter(job =>  job.location !== 'remote');
     }
+
+    if(filters.minBasePay !== 0){
+        filteredJobs = filteredJobs.filter(job => job.minJdSalary >= filters.minBasePay);
+    }
+
+    if(filters.companyName !== ''){
+        filteredJobs = filteredJobs.filter(job => job.companyName.toLowerCase().includes(filters.companyName));
+    }
+
     return filteredJobs;
 }
