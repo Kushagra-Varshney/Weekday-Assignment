@@ -1,12 +1,9 @@
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useRef } from 'react'
 import { Grid, Container } from '@mui/material';
-import useJobSearch from '../hooks/useJobSearch'
 import JobCard from './JobCard.jsx';
 import { getEstimatedSalary, getExperienceString } from '../utils/jobUtils';
-import { getJobsFromAPI } from '../fetchFunctions/fetchJobsFromAPI.js';
 import Loader from './Loader.jsx';
 import Error from './Error.jsx';
-import Filters from './Filters.jsx';
 
 
 
@@ -18,7 +15,7 @@ export default function JobGrid({ loading, error, jobs, setOffset }) {
         if (observer.current) observer.current.disconnect();
         observer.current = new IntersectionObserver(entries => {
             if (entries[0].isIntersecting) {
-                setOffset(prevOffset => prevOffset + 10);
+                setOffset(prevOffset => prevOffset + 9);
             }
         });
         if (node) observer.current.observe(node);
