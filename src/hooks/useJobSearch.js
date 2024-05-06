@@ -52,24 +52,7 @@ export default function useJobSearch(fetchFn, limit, offset) {
 
 function updateJobsBasedOnFilters(jobs, filters) {
     let filteredJobs = jobs;
-    // if (filters.companyName !== '') {
-    //     filteredJobs = filteredJobs.filter(job => job.companyName.toLowerCase().includes(filters.companyName.toLowerCase()));
-    // }
-    // if (filters.location !== '') {
-    //     filteredJobs = filteredJobs.filter(job => job.location.toLowerCase().includes(filters.location.toLowerCase()));
-    // }
-    // if (filters.minBasePay !== 0) {
-    //     filteredJobs = filteredJobs.filter(job => job.minJdSalary >= filters.minBasePay);
-    // }
-    // if (filters.remote) {
-    //     filteredJobs = filteredJobs.filter(job => job.remote);
-    // }
-    // if (filters.techStack.length > 0) {
-    //     filteredJobs = filteredJobs.filter(job => filters.techStack.some(stack => job.techStack.includes(stack)));
-    // }
-    // if (filters.role.length > 0) {
-    //     filteredJobs = filteredJobs.filter(job => filters.role.some(role => job.role.includes(role)));
-    // }
+
     if(filters.experience !== 0){
         filteredJobs = filteredJobs.filter(job => job.minExp >= filters.experience);
     }
