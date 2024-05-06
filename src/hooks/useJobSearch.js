@@ -1,10 +1,4 @@
-import React, { useState, useEffect } from 'react'
-// //Company name
-// Location
-// Remote/on-site
-// Tech stack
-// Role
-// Min base pay
+import  { useState, useEffect } from 'react'
 
 export default function useJobSearch(fetchFn, limit, offset) {
     const [loading, setLoading] = useState(false);
