@@ -3,7 +3,7 @@ import { Card, CardContent, Typography, Button, Box } from '@mui/material';
 
 export default function JobCard({ companyName, jobRole, location, logoUrl, expectedSalary, description, experience }) {
     return (
-        <Card sx={{ maxWidth: 345, padding: 2 }}>
+        <Card sx={{ maxWidth: 345, padding: 2, boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px;', borderRadius: 3 }}>
             <Box display="flex" alignItems="center" gap={2}>
                 <img src={logoUrl} alt={companyName} width="50" height="50" style={{ borderRadius: 10, objectFit: "contain" }} />
                 <Box>
@@ -36,10 +36,10 @@ export default function JobCard({ companyName, jobRole, location, logoUrl, expec
             </CardContent>
 
             <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: 'center', gap: 1, padding: 2 }}>
-                <Button variant="contained" sx={{ width: "100%", paddingBlock: 1 }}>
-                    Easy Apply
+                <Button variant="contained" sx={{ width: "100%", paddingBlock: 1, backgroundColor: '#54efc3', color: 'black', boxShadow: 'none', ":hover" : {backgroundColor: '#46c8a3'}, borderRadius: 2 }}>
+                ⚡ Easy Apply 
                 </Button>
-                <Button variant="contained" sx={{ width: "100%", paddingBlock: 1 }}>
+                <Button variant="contained" sx={{ width: "100%", paddingBlock: 1, backgroundColor: '#4943da', color: 'white', boxShadow: 'none', ":hover" : {backgroundColor: '#614eff'}, borderRadius: 2 }}>
                     Unlock Referral Asks
                 </Button>
             </Box>
